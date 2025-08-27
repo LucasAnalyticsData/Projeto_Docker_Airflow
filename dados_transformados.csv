@@ -1,0 +1,11 @@
+Cod.registro,ID do cliente,Nome do cliente,Sexo,Estado civil,Renda mensal (R$),Tipo da transação,data
+t001,1,Beatriz Oliveira,Feminino,Casado(a),"8413,63",saque,19/11/2024
+t002,2,Ana Costa,Feminino,Viúvo(a),"4347,62",saque,17/11/2024
+t003,3,Camila Souza,Feminino,Casado(a),"3075,08",saque,08/09/2024
+t004,4,Camila Costa,Feminino,Casado(a),"4260,5",pix,13/09/2024
+t005,5,Beatriz Pereira,Feminino,Casado(a),"3787,57",saque,19/11/2024
+t006,6,Fernanda Souza,Feminino,Solteiro(a),"8483,37",pix,10/11/2024
+t007,7,Paulo Araújo,Masculino,Casado(a),"6946,26",saque,07/10/2024
+t008,8,Fernanda Almeida,Feminino,Solteiro(a),"9539,49",pix,29/08/2024
+t009,9,João Pereira,Masculino,Casado(a),"6632,51",pix,09/07/2024
+t010,10,Carlos Souza,Masculino,Divorciado(a),"6195,28",pix,28/12/2024
