@@ -1,0 +1,16 @@
+# não copie caches/artefatos pro build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# notebooks e checkpoints
+*.ipynb
+.ipynb_checkpoints/
+
+# montagens / coisas que já vão por volume
+logs/
+plugins/
+dags/
+.env

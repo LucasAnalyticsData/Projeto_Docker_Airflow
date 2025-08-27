@@ -1,0 +1,14 @@
+# caches do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# notebooks e checkpoints
+*.ipynb
+.ipynb_checkpoints/
+
+# diretórios que não queremos versionar
+logs/
+plugins/
+.env

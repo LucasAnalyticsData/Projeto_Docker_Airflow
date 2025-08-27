@@ -1,0 +1,45 @@
+# -----------------------------------------------------------------------------
+# 📦 Dockerfile para Airflow Customizado - Engenharia de Dados
+# -----------------------------------------------------------------------------
+# Base oficial do Airflow, que já contém Python + dependências mínimas
+FROM apache/airflow:2.7.3-python3.9
+
+# -----------------------------------------------------------------------------
+# 👨‍💻 Definindo o usuário root temporariamente (necessário para instalar libs)
+USER root
+
+# -----------------------------------------------------------------------------
+# 🔧 Instalando dependências do sistema (úteis para libs de dados)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    vim \
+    git \
+    unzip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# -----------------------------------------------------------------------------
+# 📚 Instalando bibliotecas de Engenharia de Dados (Python)
+# - pandas: manipulação de dados
+# - pyarrow: leitura de parquet/arrow
+# - requests: chamadas API
+# - sqlalchemy: integração com bancos
+# - psycopg2-binary: conexão com Postgres
+# - apache-airflow-providers-docker: integração Airflow com Docker
+# -----------------------------------------------------------------------------
+RUN pip install --no-cache-dir \
+    pandas==2.2.2 \
+    pyarrow==16.1.0 \
+    requests==2.32.3 \
+    SQLAlchemy==2.0.30 \
+    psycopg2-binary==2.9.9 \
+    apache-airflow-providers-docker==3.6.0
+
+# -----------------------------------------------------------------------------
+# 👤 Volta a ser usuário airflow (boa prática de segurança)
+USER airflow
+
+# -----------------------------------------------------------------------------
+# 🏁 Define o diretório de trabalho dentro do container
+WORKDIR /opt/airflow
